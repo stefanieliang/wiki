@@ -60,24 +60,92 @@
 
 #### 2.2 新建实际执行的文件
 
-my-webpack/src/index.js
+```diff
+// my-webpack/src/index.js
 
-```
-#! /user/bin/env node
++ #! /usr/bin/env node
  // 声明这是一个node文件
 
-console.log("我的webpack开工了")
++ console.log("我的webpack开工了")
 ```
 
-#### 2.3 链接到外部供使用
+#### 2.3 创建链接
 
-`npm link`命令将自己的webpack链接到外部，供使用。
+- 在`my-webpack`里连接到外部
+
+`npm link`命令将自己的webpack链接到**本地全局**，软连，实时更新，供使用。
 
 ```
-E:\workspace\wiki\前端工程化\my-webpack>npm link
+E:\workspace\wiki\engineering\my-webpack>npm link
 
-up to date in 0.847s
+up to date in 0.917s
 C:\Users\ld\AppData\Roaming\npm\my-webpack -> C:\Users\ld\AppData\Roaming\npm\node_modules\my-webpack\src\index.js
-C:\Users\ld\AppData\Roaming\npm\node_modules\my-webpack -> E:\workspace\wiki\前端工程化\my-webpack
+C:\Users\ld\AppData\Roaming\npm\node_modules\my-webpack -> E:\workspace\wiki\engineering\my-webpack
 ```
+
+- 在`webpack-02`中使用
+
+```
+E:\workspace\wiki\engineering\webpack-02>npm link my-webpack
+
+E:\workspace\wiki\engineering\webpack-02\node_modules\my-webpack -> C:\Users\ld\AppData\Roaming\npm\node_modules\my-webpack ->
+E:\workspace\wiki\engineering\my-webpack
+```
+
+#### 2.4 验证连接
+
+```
+E:\workspace\wiki\engineering\webpack-02>npx my-webpack
+我的webpack开工了
+```
+
+
+
+#### 2.5 创建自己的配置文件
+
+```
+// webpack-02/mypack.config.js
+
+module.exports = {
+    output: {
+        filename: "my.js"
+    }
+}
+```
+
+#### 2.6 开发打包工具
+
+```diff
+// my-webpack/src/index.js
+
+ #! /usr/bin/env node
+ // 声明这是一个node文件
+
+ console.log("我的webpack开工了")
+```
+
+#### 2.7 验证开发包是否起作用
+
+```
+E:\workspace\wiki\engineering\webpack-02>npx my-webpack
+{ entry: './src/index.js', output: { filename: 'my.js' } }
+```
+
+#### 2.8 项目动态监听开发包的变化
+
+工具包修改后，项目中自动更新：
+
+- 项目中安装：`npm install onchange --save `
+
+- ```diff
+  // webpack-02/package.json
+  
+  "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+  +    "build": "my-webpack",
+  +    "postbuild": "onchange '../my-webpack/' './src' -- my-webpack"
+    },
+  ```
+
+- 项目中运行：`npm run build`
 
