@@ -46,17 +46,17 @@
 
 - 添加 bin 配置，表示实际执行的文件
 
-  ```diff
-  // package.json
-  
-  {
-    ...
-  +  "bin": {
-  +    "my-webpack": "./src/index.js"
-  +  },
-    ...
-  }
-  ```
+```diff
+// package.json
+
+{
+...
++  "bin": {
++    "my-webpack": "./src/index.js"
++  },
+...
+}
+```
 
 #### 2.2 新建实际执行的文件
 
@@ -71,7 +71,7 @@
 
 #### 2.3 创建链接
 
-- 在`my-webpack`里连接到外部
+在`my-webpack`里连接到外部
 
 `npm link`命令将自己的webpack链接到**本地全局**，软连，实时更新，供使用。
 
@@ -83,23 +83,12 @@ C:\Users\ld\AppData\Roaming\npm\my-webpack -> C:\Users\ld\AppData\Roaming\npm\no
 C:\Users\ld\AppData\Roaming\npm\node_modules\my-webpack -> E:\workspace\wiki\engineering\my-webpack
 ```
 
-- 在`webpack-02`中使用
-
-```
-E:\workspace\wiki\engineering\webpack-02>npm link my-webpack
-
-E:\workspace\wiki\engineering\webpack-02\node_modules\my-webpack -> C:\Users\ld\AppData\Roaming\npm\node_modules\my-webpack ->
-E:\workspace\wiki\engineering\my-webpack
-```
-
 #### 2.4 验证连接
 
 ```
 E:\workspace\wiki\engineering\webpack-02>npx my-webpack
 我的webpack开工了
 ```
-
-
 
 #### 2.5 创建自己的配置文件
 
@@ -116,12 +105,26 @@ module.exports = {
 #### 2.6 开发打包工具
 
 ```diff
-// my-webpack/src/index.js
-
- #! /usr/bin/env node
+#! /usr/bin/env node
  // 声明这是一个node文件
 
- console.log("我的webpack开工了")
+// console.log("我的webpack开工了")
+
++ const path = require("path")
+
++ const defaultOptions = {
++     entry: "./src/index.js",
++     output: {
++         filename: "bundle.js"
++     }
++ }
+
++ const config = {
++     ...defaultOptions,
++     ...require(path.resolve("./mypack.config.js"))
++ }
+
++ console.log(config)
 ```
 
 #### 2.7 验证开发包是否起作用
