@@ -1,22 +1,18 @@
 <template>
   <div class="login">
-    <cube-form
-      :model="model"
-      :schema="schema"
-      @validate="validateHandler"
-      @submit="submitHandler"
-    ></cube-form>
+    <cube-form :model="model" :schema="schema" @validate="validateHandler" @submit="submitHandler"></cube-form>
   </div>
 </template>
 <script>
 import axios from "axios";
+import { mapMutations } from "vuex";
 export default {
   name: "Login",
   data() {
     return {
       model: {
-        username: "",
-        passwd: ""
+        username: "ld",
+        passwd: "123"
       },
       schema: {
         fields: [
@@ -60,6 +56,7 @@ export default {
     };
   },
   methods: {
+    ...mapMutations(["SET_TOKEN"]),
     validateHandler(result) {
       // console.log("validateHandler...", result);
     },
@@ -74,6 +71,7 @@ export default {
       console.log(ret);
       if (ret.status == 200) {
         if (ret.data.code == "0000") {
+          this.SET_TOKEN(ret.data.token);
         } else {
           const toast = this.$createToast({
             time: 2000,
@@ -90,6 +88,7 @@ export default {
 };
 </script>
 <style lang="stylus">
-.login
-  margin 30px 0
+.login {
+  margin: 30px 0;
+}
 </style>
