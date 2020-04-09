@@ -26,7 +26,9 @@ module.exports = {
           if (username === 'ld' && passwd === '123') {
             res.json({
               code: '0000',
-              token: "shuangwaiwai-" + (new Date().getTime() + 1000 * 60)
+              data: {
+                token: "shuangwaiwai-" + (new Date().getTime() + 1000 * 60)
+              }
             })
           } else {
             res.json({

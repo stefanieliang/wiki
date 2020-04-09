@@ -4,7 +4,6 @@
   </div>
 </template>
 <script>
-import axios from "axios";
 import { mapMutations } from "vuex";
 export default {
   name: "Login",
@@ -67,22 +66,8 @@ export default {
         username: this.model.username,
         passwd: this.model.passwd
       };
-      const ret = await axios.get("/api/login", { params: obj });
-      console.log(ret);
-      if (ret.status == 200) {
-        if (ret.data.code == "0000") {
-          this.SET_TOKEN(ret.data.token);
-        } else {
-          const toast = this.$createToast({
-            time: 2000,
-            txt: ret.data.message || "未知错误！",
-            type: "error"
-          });
-          toast.show();
-        }
-      } else {
-        // 服务器错误
-      }
+      const ret = await this.$axios.get("/api/login", { params: obj });
+      this.SET_TOKEN(ret.token);
     }
   }
 };
