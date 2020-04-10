@@ -3,7 +3,10 @@
 import Vue from 'vue';
 import axios from "axios";
 import store from "../store/index"
-import { createAPI } from 'cube-ui'
+import router from "../router/index"
+import {
+  createAPI
+} from 'cube-ui'
 
 // Full config:  https://github.com/axios/axios#request-config
 // axios.defaults.baseURL = process.env.baseURL || process.env.apiUrl || '';
@@ -34,8 +37,16 @@ _axios.interceptors.request.use(
 _axios.interceptors.response.use(
   function (response) {
     // Do something with response data
-    if (response.status == 200 && response.data.code == '0000') {
-      return response.data
+    if (response.status == 200) {
+      const data = response.data;
+      if (data.code == -1) {
+        // token过期
+        store.commit('SET_TOKEN', "")
+        router.replace({
+          path: "/login"
+        })
+      }
+      return data
     } else {
       // const toast = this.$createToast({
       //   time: 2000,
