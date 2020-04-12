@@ -4,9 +4,6 @@ import Vue from 'vue';
 import axios from "axios";
 import store from "../store/index"
 import router from "../router/index"
-import {
-  createAPI
-} from 'cube-ui'
 
 // Full config:  https://github.com/axios/axios#request-config
 // axios.defaults.baseURL = process.env.baseURL || process.env.apiUrl || '';
@@ -24,7 +21,9 @@ const _axios = axios.create(config);
 _axios.interceptors.request.use(
   function (config) {
     // Do something before request is sent
-    config.headers.token = store.state.token || ""
+    if (store.state.token) {
+      config.headers.token = store.state.token
+    }
     return config;
   },
   function (error) {
@@ -40,21 +39,15 @@ _axios.interceptors.response.use(
     if (response.status == 200) {
       const data = response.data;
       if (data.code == -1) {
-        // token过期
+        // code==-1 , token过期
         store.commit('SET_TOKEN', "")
         router.replace({
-          path: "/login"
+          path: "login"
         })
       }
+      // 其他状态码交给业务处理
       return data
     } else {
-      // const toast = this.$createToast({
-      //   time: 2000,
-      //   txt: response.data.message || "未知错误！",
-      //   type: "error"
-      // });
-      // toast.show();
-      alert(response.data.message)
       return response;
     }
   },

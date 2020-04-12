@@ -24,7 +24,21 @@ export default {
             },
             rules: {
               required: true,
-              message: "用户名不能为空"
+              min: 2,
+              type: "string",
+              // 异步校验，一个函数返回布尔值
+              userCheck: val => {
+                return reslove => {
+                  this.$axios.get("api/check?username=" + val).then(res => {
+                    reslove(res.code == 0);
+                  });
+                };
+              }
+            },
+            messages: {
+              required: "用户名不能为空",
+              min: "用户名不能少于2个字符",
+              userCheck: "用户名不存在"
             },
             trigger: blur
           },
@@ -67,7 +81,15 @@ export default {
         passwd: this.model.passwd
       };
       const ret = await this.$axios.get("/api/login", { params: obj });
-      this.SET_TOKEN(ret.token);
+      if (ret.code == 0) {
+        this.SET_TOKEN(ret.data.token);
+      } else {
+        this.$createToast({
+          time: 2000,
+          txt: ret.message || "未知错误！",
+          type: "error"
+        }).show();
+      }
     }
   }
 };

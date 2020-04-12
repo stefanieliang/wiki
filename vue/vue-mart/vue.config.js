@@ -22,7 +22,7 @@ module.exports = {
         const API_KEY = "shuangwaiwai";
 
         // 鉴权
-        api.get("/api/authapi", function (req, res) {
+        app.get("/api/authapi", function (req, res) {
           const {
             token
           } = req.headers;
@@ -50,14 +50,14 @@ module.exports = {
         // 异步校验
         app.get('/api/check', function (req, res) {
           const username = req.query.username
-          if (username == 'dasheng') {
+          if (username == 'ld') {
             // 实际的逻辑肯定是要去数据库查
             res.json({
-              code: 1
+              code: 0
             })
           } else {
             res.json({
-              code: 0
+              code: 1
             })
           }
         });
@@ -117,7 +117,7 @@ module.exports = {
                 },
                 {
                   id: 5,
-                  title: '面试',
+                  title: '设计模式',
                   price: '200',
                   img: '/img/02.jpg',
                   count: 100
@@ -249,7 +249,7 @@ module.exports = {
             res.json({
               code: 0,
               data: {
-                token: "shuangwaiwai-" + (new Date().getTime() + 1000 * 60)
+                token: API_KEY + "-" + (new Date().getTime() + 1000 * 60)
               }
             })
           } else {
@@ -258,6 +258,13 @@ module.exports = {
               message: "用户名或密码错误！"
             })
           }
+        });
+
+        // 登出
+        app.get("/api/logout", function (req, res) {
+          res.json({
+            code: -1
+          })
         })
       }
     }

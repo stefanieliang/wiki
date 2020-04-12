@@ -1,18 +1,41 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <cube-slide ref="slide" :data="slider" @change="changePage">
+      <cube-slide-item v-for="(item, index) in slider" :key="index">
+        <router-link :to="`/detail/${item.id}`">
+          <img :src="item.img" />
+        </router-link>
+      </cube-slide-item>
+    </cube-slide>
+
+    <!-- <goods-list :data="all"></goods-list> -->
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
   name: "Home",
-  components: {
-    HelloWorld
+  data() {
+    return {
+      slider: [],
+      keys: [],
+      data: {}
+    };
+  },
+  computed: {
+    all() {
+      const ret = [];
+      this.keys.forEach(v => {
+        ret = ret.concat(this.data[v]);
+      });
+      return ret;
+    }
+  },
+  async created() {
+    const ret = await this.$axios("/api/goods");
+    this.slider = ret.slider;
+    this.keys = ret.keys;
+    this.data = ret.data;
   }
 };
 </script>

@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
+import store from "../store";
 
 Vue.use(VueRouter);
 
@@ -24,7 +25,8 @@ const routes = [{
     component: () =>
       import( /* webpackChunkName: "about" */ "../views/About.vue"),
     meta: {
-      oauth: true
+      // 标记需要校验
+      auth: true
     }
   }
 ];
@@ -35,4 +37,20 @@ const router = new VueRouter({
   routes
 });
 
+// 路由守卫
+router.beforeEach((to, from, next) => {
+  if (to.meta.auth) {
+    // 需要校验的路由
+    if (store.state.token) {
+      next()
+    } else {
+      // token失效
+      next({
+        path: '/login'
+      })
+    }
+  } else {
+    next()
+  }
+})
 export default router;

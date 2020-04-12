@@ -7,7 +7,7 @@ import mutations from './mutations'
 import VuexPersistence from 'vuex-persist'
 Vue.use(Vuex)
 const vuexLocal = new VuexPersistence({
-  storage: window.sessionStorage
+  storage: window.localStorage
 })
 const debug = process.env.NODE_ENV !== 'production'
 export default new Vuex.Store({
