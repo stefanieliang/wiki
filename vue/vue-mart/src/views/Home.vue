@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <cube-slide ref="slide" :data="slider" @change="changePage">
+    <cube-slide ref="slide" :data="slider">
       <cube-slide-item v-for="(item, index) in slider" :key="index">
         <router-link :to="`/detail/${item.id}`">
           <img :src="item.img" />
