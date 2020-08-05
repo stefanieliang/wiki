@@ -16,3 +16,4 @@ npm install vue vue-server-renderer --save
 npm install express --save
 ```
 
+## 配置
