@@ -12,16 +12,14 @@
 
 #### 2.Koa 中间件
 
-​	洋葱头
-
-​	koa-pv.js
-
-​	m1.js
-
-​	m2.js
-
-​	m3.js
-
-
+​	洋葱头， 注意 `await next()`
 
 ### 二、Mongoose 和 Redis 基础
+
+#### 1.安装 mongodb 及 可视化工具 RoBo 3T
+
+#### 2.mongoose
+
+​	安装
+
+​	`npm i mongoose`
