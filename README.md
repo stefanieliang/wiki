@@ -164,4 +164,4 @@
 - [「算法与数据结构」你可能需要的一份前端算法总结](https://juejin.cn/post/6900698814093459463)
 - [Gopal 的 2020 年度总结 ](https://juejin.cn/post/6902397101200637959)
 
-- 
+- [前端基础知识梳理](https://blog.callmewhy.com/post/qian-duan-ji-chu-zhi-shi-shu-li/)
