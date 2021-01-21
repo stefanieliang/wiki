@@ -136,7 +136,7 @@ package-name
 npm install my-package
 ```
 
-### 3.发布unscoped公有包
+### 4.发布unscoped公有包
 
 1. 在命令行上，导航到包的根目录。
 
@@ -223,7 +223,7 @@ npm install my-package
 npm install my-package
 ```
 
-### 3.发布scoped公有包
+### 4.发布scoped公有包
 
 1. 在命令行上，导航到包的根目录。
 
@@ -310,7 +310,7 @@ npm install my-package
 npm install my-package
 ```
 
-### 3.发布私有包
+### 4.发布私有包
 
 1. 在命令行上，导航到包的根目录。
 

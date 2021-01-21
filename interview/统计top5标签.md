@@ -26,6 +26,6 @@ Object.entries(
     .slice(0,5)
     .map(v=>({'标签名：':v[0],'次数：':v[1]}))
     
-    console.table(re)
+    console.table(ret)
 ```
 
