@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 布局</title>
+    <style>
+        .flex{
+            display: flex;
+        }
+        .left{
+            flex: 1;
+            background-color: red;
+        }
+        .right{
+            width: 100px;;
+            background-color: blue;
+        }        
+    </style>
+     <style>
+        .layout.flexbox{
+            margin-top: 140px;
+        }
+        .layout.flexbox .left-center-right{
+            display: flex;/*声明此容器是flexbox布局*/
+        }
+        .layout.flexbox .left{
+            width: 300px;
+            background-color: red;
+        }
+        .layout.flexbox .center{
+            flex: 1;/*此部分自适应*/
+            background-color: blue;
+        }
+        .layout.flexbox .right{
+            width: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex">
+        <div class="left"><input type="text" style="width:100%"></div>
+        <div class="right"><button style="width:100%">搜索</button></div>
+    </div>
+    <!--flexbox布局-->
+    <!-- <section class="layout flexbox">
+       
+        <article class="left-center-right">
+            <div class="left"></div>
+            <div class="center">
+                <h1>flexbox解决方案</h1>
+                1.这是三栏布局的中间部分
+                2.这是三栏布局的中间部分
+                3.这是三栏布局的中间部分
+                4.这是三栏布局的中间部分
+                5.这是三栏布局的中间部分
+                6.这是三栏布局的中间部分
+            </div>
+            <div class="right"></div>
+        </article>        
+    </section> -->
+</body>
+</html>

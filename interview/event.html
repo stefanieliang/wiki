@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义事件</title>
+</head>
+<body>
+    <div>
+        <ul id="father">
+            <li>列表1</li>
+            <li>列表2</li>
+            <li>列表3</li>
+        </ul>
+    </div>
+    <script>
+        // var eve = new Event('event1');
+        // var dom = document.getElementById("father");
+        // dom.addEventListener('event1',function(){
+        //     let count = 0;
+        //     count ++;
+        //     console.log(count)
+        // })
+
+        // let i=3;
+        // while(i--){
+        //     setTimeout(function(){
+        //         dom.dispatchEvent(eve)
+        //     },1000)
+        // }
+        // 打印输出： 1 1 1
+
+        var eve = new CustomEvent('event1',{
+            detail:{
+                count:0
+            }
+        });
+        var dom = document.getElementById("father");
+        dom.addEventListener('event1',function(e){
+            e.detail.count++
+            console.log(e.detail.count)
+        })
+
+        let i=3;
+        while(i--){
+            setTimeout(function(){
+                dom.dispatchEvent(eve)
+            },1000)
+        }        
+        // 打印输出： 1 2 3
+    </script>
+    
+</body>
+</html>
