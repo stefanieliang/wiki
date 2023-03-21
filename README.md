@@ -4,17 +4,15 @@
 
 [JavaScript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
 
-[重新介绍JavaScript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+[重新介绍 JavaScript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
 
-[JavaScript教程](https://wangdoc.com/javascript/)
+[JavaScript 教程](https://wangdoc.com/javascript/)
 
-[现代JavaScript教程](https://zh.javascript.info/)
+[现代 JavaScript 教程](https://zh.javascript.info/)
 
 ## ES6
 
 [ES6 入门教程](https://es6.ruanyifeng.com/)
-
-
 
 ## TypeScript
 
@@ -34,8 +32,6 @@
 
 [Nuxt JS](https://zh.nuxtjs.org/)：Build your next Vue.js application with confidence using NuxtJS
 
-
-
 ## React
 
 [React](https://zh-hans.reactjs.org/)
@@ -44,11 +40,9 @@
 
 [React 源码解析](https://react.jokcy.me/)
 
-
-
 ## UI
 
-[Vant](https://youzan.github.io/vant/#/zh-CN/)：轻量、可靠地移动端vue组件库
+[Vant](https://youzan.github.io/vant/#/zh-CN/)：轻量、可靠地移动端 vue 组件库
 
 [Cube UI](https://didi.github.io/cube-ui/#/zh-CN)：基于 Vue.js 实现的精致移动端组件库
 
@@ -56,7 +50,7 @@
 
 [Element](https://element.eleme.cn/#/zh-CN)：一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库
 
-[View UI](https://www.iviewui.com/)：一套基于 Vue.js 的高质量UI 组件库
+[View UI](https://www.iviewui.com/)：一套基于 Vue.js 的高质量 UI 组件库
 
 [Ant Design](https://ant.design/index-cn)：是基于 Ant Design 设计体系的 React UI 组件库，主要用于研发企业级中后台产品
 
@@ -69,7 +63,7 @@
 
 [Express](https://www.expressjs.com.cn/)：基于 [Node.js](https://nodejs.org/en/) 平台，快速、开放、极简的 Web 开发框架
 
-[koa](https://www.koajs.com.cn/)：基于Node.js平台的下一代web开发框架
+[koa](https://www.koajs.com.cn/)：基于 Node.js 平台的下一代 web 开发框架
 
 ## mongoDB
 
@@ -95,7 +89,7 @@
 
 ## 代码规范
 
-[Husky](https://github.com/typicode/husky)：Husky can prevent bad `git commit`, `git push` and more 
+[Husky](https://github.com/typicode/husky)：Husky can prevent bad `git commit`, `git push` and more
 
 [commitizen](https://github.com/commitizen/cz-cli)
 
@@ -115,7 +109,7 @@
 
 [mocha](https://mochajs.org/)：Mocha is a feature-rich JavaScript test framework running on [Node.js](https://nodejs.org/) and in the browser
 
-[jest](https://jestjs.io/zh-Hans/)：一个JavaScript 测试框架，适用但不局限于：[Babel](https://babeljs.io/), [TypeScript](https://www.typescriptlang.org/), [Node](https://nodejs.org/en/), [React](https://reactjs.org/), [Angular](https://angular.io/), [Vue](https://vuejs.org/)
+[jest](https://jestjs.io/zh-Hans/)：一个 JavaScript 测试框架，适用但不局限于：[Babel](https://babeljs.io/), [TypeScript](https://www.typescriptlang.org/), [Node](https://nodejs.org/en/), [React](https://reactjs.org/), [Angular](https://angular.io/), [Vue](https://vuejs.org/)
 
 [Vue Test Utils](https://vue-test-utils.vuejs.org/zh/)： 是 Vue.js 官方的单元测试实用工具库
 
@@ -129,19 +123,19 @@
 
 [ace](https://ace.c9.io/)
 
-[wangEditor](http://www.wangeditor.com/)：基于javascript和css开发的 Web富文本编辑器
+[wangEditor](http://www.wangeditor.com/)：基于 javascript 和 css 开发的 Web 富文本编辑器
 
 ## webview
 
 [webview](http://www.html5plus.org/doc/zh_cn/webview.html)
 
-[WebView全面解析](https://www.jianshu.com/p/3e0136c9e748)
+[WebView 全面解析](https://www.jianshu.com/p/3e0136c9e748)
 
 # 三、其他
 
 ## 设计模式
 
-[JavaScript中常见的十五种设计模式](https://www.cnblogs.com/imwtr/p/9451129.html)
+[JavaScript 中常见的十五种设计模式](https://www.cnblogs.com/imwtr/p/9451129.html)
 
 # 四、awesome
 
@@ -162,6 +156,3 @@
 ### 收藏博客
 
 - [「算法与数据结构」你可能需要的一份前端算法总结](https://juejin.cn/post/6900698814093459463)
-- [Gopal 的 2020 年度总结 ](https://juejin.cn/post/6902397101200637959)
-
-- [前端基础知识梳理](https://blog.callmewhy.com/post/qian-duan-ji-chu-zhi-shi-shu-li/)
