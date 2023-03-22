@@ -10,7 +10,7 @@
 
 ### 优化前
 
-![image-20230321164948260](imgs\gzip优化前.png)
+![image-20230321164948260](..\imgs\gzip优化前.png)
 
 ![image-20230322095850314](imgs\gzip优化前2.png)
 
