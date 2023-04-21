@@ -1,0 +1,4 @@
+1.文生图  https://flagstudio.baai.ac.cn/
+	智源研究院 https://www.baai.ac.cn/
+
+2.微软案例 https://agreeable-flower-0968eb610.2.azurestaticapps.net/
