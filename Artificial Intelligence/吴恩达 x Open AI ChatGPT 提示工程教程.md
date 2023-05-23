@@ -49,6 +49,10 @@ git地址：https://github.com/datawhalechina/prompt-engineering-for-developers
 
 ​	eg:  提取标签、提取名字、情感分析、**信息提取**、提取新闻主题（零示例学习算法）
 
+![3428b46f9fd6130f27707be5b7ba4ff](.\images\3428b46f9fd6130f27707be5b7ba4ff.png)
+
+![9658e0850d77bf84bd434e2b90f4871](.\images\9658e0850d77bf84bd434e2b90f4871.png)
+
 ### 六、文本转换Transforming
 
 - 文本翻译
@@ -59,13 +63,15 @@ git地址：https://github.com/datawhalechina/prompt-engineering-for-developers
 ### 七、文本扩展Expanding
 
 - 定制客户邮件
-- 使用temperature参数。可靠可预测temperature等于0，更有创意性temperature更接近于1。
+- 使用temperature参数。可靠可预测temperature等于0，更有创意性temperature更接近于0.75。
 
 ### 八、聊天机器人
 
 - 订餐机器人
   - role:system、user、assistant
   - 上下文
+  
+  ![4b33be9ae2b3945ed621745e8115dbf](.\images\4b33be9ae2b3945ed621745e8115dbf.png)
 
 ### 九、总结
 

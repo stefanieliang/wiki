@@ -1,4 +1,7 @@
-1.文生图  https://flagstudio.baai.ac.cn/
-	智源研究院 https://www.baai.ac.cn/
-
-2.微软案例 https://agreeable-flower-0968eb610.2.azurestaticapps.net/
+1. 文生图  https://flagstudio.baai.ac.cn/
+2. 智源研究院 https://www.baai.ac.cn/
+3. 微软案例 https://agreeable-flower-0968eb610.2.azurestaticapps.net/
+4. 提示词工程https://www.promptingguide.ai/zh
+5. 文生图 https://www.midjourney.com/
+6. vscode插件，代码翻译、生成、解释[CodeGeeX](https://codegeex.cn/zh-CN/downloadGuide)
+7. [GitHub Copilot 快速入门 - GitHub 文档](https://docs.github.com/zh/copilot/quickstart)
